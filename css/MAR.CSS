@@ -1,0 +1,17 @@
+body {
+    /* Usamos fixed para que el fondo se quede estático mientras haces scroll */
+    background: url(../img/MAR.png) no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+
+/* Optimización específica para teléfonos y pantallas verticales */
+@media (max-width: 768px) {
+    body {
+        /* En móvil cambiamos a contain si quieres que se vea el diseño completo, 
+           o dejamos cover pero asegurando el comportamiento fijo */
+        background-attachment: fixed;
+        background-size: cover; /* Cambia a 'contain' si prefieres que no se corte nada de los lados */
+    }
+}

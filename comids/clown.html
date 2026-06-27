@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>que comemo!!</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="shortcut icon" href="../img/ico.png" type="image/x-icon">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <a href="../second.html"><img class="back" src="../img/back.png" alt="sd"></a>
+        <h1>como tu digas, quede:</h1>
+    </header>
+      
+
+    <main>
+        
+<!-- El tamaño se controla con width="300" (ajusta los píxeles a tu gusto) -->
+<!-- Se eliminó 'muted' para que reproduzca con sonido tras el clic -->
+<video id="miVideo" width="300" loop playsinline>
+    <source src="../vid/meme payaso foto.mp4" type="video/mp4">
+    Tu navegador no soporta este video.
+</video>
+
+<script>
+  // El video se reproducirá con sonido automáticamente en cuanto el usuario haga un clic en la página
+  document.addEventListener('click', () => {
+    const video = document.getElementById('miVideo');
+    
+    // Forzamos el encendido del audio por si el navegador intenta bloquearlo
+    video.muted = false; 
+    
+    video.play().catch(error => {
+      console.log("La reproducción fue bloqueada por el navegador:", error);
+    });
+  }, { once: true });
+</script>
+
+    </main>
+
+
+
+
+
+
+
+    <footer>
+        <h2>By daury for M</h2>
+    </footer>
+
+    <script src="java/app.js"></script>
+</body>
+</html>

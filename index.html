@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="img/ico.png" type="image/x-icon">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Intro</title>
+    <style>
+        /* Estilos básicos para centrar el contenido */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url('https://img.goodfon.com/wallpaper/big/2/d7/chelovek-pauk-cherez-vselennye-spider-man-into-the-spider--1.webp'); /* Asegúrate de tener una imagen de fondo */
+        }
+
+        h1 {
+            color: #333;
+            background-color: rgba(255, 255, 255, 0.8); /* Fondo semitransparente para mejorar la legibilidad */
+            margin-bottom: 20px;
+        }
+
+        /* Estilo para que el enlace parezca un botón llamativo */
+        .boton-entrar {
+            background-color: #007bff;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .boton-entrar:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>¡Me agarro el aburrimientoooo!</h1>
+    
+    <!-- Botón vinculado a otra sección o página -->
+    <a href="intro.html" class="boton-entrar">Entrar a la página</a>
+    <br>
+    <br>
+
+    
+<!-- El tamaño se controla con width="300" (ajusta los píxeles a tu gusto) -->
+<!-- Se eliminó 'muted' para que reproduzca con sonido tras el clic -->
+<video id="miVideo" width="300" loop playsinline>
+    <source src="vid/dog1.mp4" type="video/mp4">
+    Tu navegador no soporta este video.
+</video>
+
+<script>
+  // El video se reproducirá con sonido automáticamente en cuanto el usuario haga un clic en la página
+  document.addEventListener('click', () => {
+    const video = document.getElementById('miVideo');
+    
+    // Forzamos el encendido del audio por si el navegador intenta bloquearlo
+    video.muted = false; 
+    
+    video.play().catch(error => {
+      console.log("La reproducción fue bloqueada por el navegador:", error);
+    });
+  }, { once: true });
+</script>
+
+</body>
+</html>
